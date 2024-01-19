@@ -38,7 +38,7 @@ nav{
     cursor: pointer;
     position: relative;
     margin:0 20px;
-
+    transition: 0.3s linear;
 }
 
 .links a::before{
@@ -49,6 +49,7 @@ nav{
     width: 0%;
     background-color: #f74f10;
     height: 3.5px;
+    transition: 0.3s linear;
 }
 
 .links a:hover::before,
@@ -82,7 +83,7 @@ section .content{
 .content .main-content{
     color: white;
     max-width: 600px;
-    width: 100px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -106,7 +107,64 @@ section .content{
     width: 100%;
     justify-content: space-around;
     min-height: 7vh;
-
 }
 
-/* min 8:53 */
+.order h3{
+    font-size: 1.8rem;
+}
+
+.order button{
+    min-width: 50%;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #f74f10 40%, #8a3313);
+    color: white;
+    font-weight: 700;
+    padding: 0 2px;
+    font-size: clamp(0.6rem, 1rem 5vw, 3rem);
+    transition: 0.1s linear;
+}
+
+.order button:hover{
+    box-shadow: 0 0 30px #f74f10;
+    background: linear-gradient(to bottom right, #8a3313, #f74f10 40%);
+}
+
+.content .image img{
+    max-width: 450px;
+    width: 100%;
+    margin-right: 100px;
+    transform: rotate(40deg) translateX(900px);
+    filter: drop-shadow(-10px -10px 200px #f74f10);
+}
+
+@media (max-width:800px){
+    .content{
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    
+    .main-content{
+        margin: 0 10px;
+    }
+}
+
+@media (min-width:884px){
+    .content .image img{
+        min-width: 500px;
+    }
+}
+
+@media (max-width:440px){
+    .links{
+        display: none;
+    }
+
+    .image img{
+        width: 100px;
+        margin-right: none;
+    }
+}
